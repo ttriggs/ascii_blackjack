@@ -1,7 +1,0 @@
----
-title: "Blackjack"
-type: "challenge"
-description: "Build a command-line card game using classes."
-depends: "space-jams"
-ignore:
-- "blackjack.md"
