@@ -67,18 +67,18 @@ class Player < Hand
   end
 
   def choice
-    print "#{@name}, it's your turn... respond with 1=hit or 2=stand? [ 1:2 ]  "
+    print "#{@name}, it's your turn... respond with H=hit or S=stand? [ H:S ]  "
     answer = ""
-    possible_answers = [1, 2]
+    possible_answers = ["h", "s"]
     while answer == ""
-      answer = gets.chomp.to_i
-      if !possible_answers.include?(answer)
+      answer = gets.chomp
+      if !possible_answers.include?(answer.downcase)
         answer = ""
         puts "Sorry, could you please try that answer again?"
-        puts "\tpossible choices are: 1=hit or 2=stand? [ 1:2 ]"
+        puts "\tpossible choices are: H=hit or S=stand? [ H:S ]"
       end
     end
-    (answer == 1) ? "hit" : stand
+    (answer.downcase == "h") ? "hit" : stand
   end
 end
 
